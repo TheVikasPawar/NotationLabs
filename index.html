@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notation_ Labs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* General Reset */
@@ -33,7 +36,8 @@
       position: fixed;
       width: 100%;
       z-index: 1000;
-      top: 0; /* Remove space above nav */
+      top: 0;
+      /* Remove space above nav */
     }
 
     .logo {
@@ -60,13 +64,15 @@
     }
 
     main {
-      margin-top: 60px; /* Reduced top margin */
+      margin-top: 60px;
+      /* Reduced top margin */
     }
 
     section {
       padding: 80px 20px;
       text-align: center;
-      min-height: calc(100vh * (9/16)); /* 16:9 aspect ratio */
+      min-height: calc(100vh * (9/16));
+      /* 16:9 aspect ratio */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -88,7 +94,7 @@
       justify-content: center;
       background-color: #eee;
     }
-    
+
     .hero p {
       margin-top: 20px;
       font-size: 18px;
@@ -105,6 +111,8 @@
     }
 
     .contact-button {
+      width: 180px;
+      /* Fixed width for uniformity */
       padding: 12px 24px;
       font-size: 16px;
       background: #000;
@@ -116,7 +124,9 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
+      text-align: center;
     }
 
     .contact-button:hover {
@@ -124,7 +134,8 @@
     }
 
     .get-in-touch {
-      max-width: 180px; /* Reduced width */
+      max-width: 180px;
+      /* Reduced width */
       margin: 30px auto 0;
     }
 
@@ -135,7 +146,7 @@
       position: relative;
       display: inline-block;
     }
-    
+
     .notation-underscore {
       animation: blink 1s infinite;
     }
@@ -146,14 +157,19 @@
       margin-bottom: 20px;
     }
 
-    .card-container, .portfolio-images, .blog-items {
+    .card-container,
+    .portfolio-images,
+    .blog-items {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
 
-    .card, .portfolio-item, .blog-card, .testimonial {
+    .card,
+    .portfolio-item,
+    .blog-card,
+    .testimonial {
       background: #ddd;
       border-radius: 8px;
       padding: 30px;
@@ -161,11 +177,16 @@
       transition: transform 0.3s ease;
     }
 
-    .card:hover, .portfolio-item:hover, .blog-card:hover, .testimonial:hover {
+    .card:hover,
+    .portfolio-item:hover,
+    .blog-card:hover,
+    .testimonial:hover {
       transform: translateY(-8px);
     }
 
-    .card h3, .portfolio-item h3, .blog-card h3 {
+    .card h3,
+    .portfolio-item h3,
+    .blog-card h3 {
       font-family: 'Space Mono', monospace;
       font-size: 20px;
       margin-bottom: 10px;
@@ -180,7 +201,7 @@
       margin-top: 10px;
       font-weight: 600;
     }
-	
+
     .newsletter {
       min-height: 100vh;
       display: flex;
@@ -252,117 +273,137 @@
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
+
+      0%,
+      100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
     @media (max-width: 768px) {
-      .card, .portfolio-item, .testimonial, .blog-card {
+
+      .card,
+      .portfolio-item,
+      .testimonial,
+      .blog-card {
         width: 100%;
       }
-      
+
       nav ul {
         gap: 15px;
       }
-      
+
       .contact-buttons {
         flex-direction: column;
         align-items: center;
       }
     }
-	/* Hamburger menu styles */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-  z-index: 1001;
-}
 
-.menu-toggle span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #000;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
+    /* Hamburger menu styles */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      cursor: pointer;
+      z-index: 1001;
+    }
 
-/* Styles for menu drawer */
-.drawer-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 250px;
-  height: 100vh;
-  background-color: #fff; /* Changed to white for black text */
-  color: #000; /* Text color */
-  z-index: 1000;
-  padding-top: 70px;
-  transition: right 0.3s ease;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-}
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: #000;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
 
-.drawer-menu.open {
-  right: 0;
-}
+    /* Styles for menu drawer */
+    .drawer-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 250px;
+      height: 100vh;
+      background-color: #fff;
+      /* Changed to white for black text */
+      color: #000;
+      /* Text color */
+      z-index: 1000;
+      padding-top: 70px;
+      transition: right 0.3s ease;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
 
-.drawer-menu ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
+    .drawer-menu.open {
+      right: 0;
+    }
 
-.drawer-menu ul li {
-  margin: 15px 0;
-}
+    .drawer-menu ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
 
-.drawer-menu ul li a {
-  color: #000; /* Black text color */
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
+    .drawer-menu ul li {
+      margin: 15px 0;
+    }
 
-.drawer-menu ul li a:hover {
-  color: #007bff; /* Blue hover color */
-}
+    .drawer-menu ul li a {
+      color: #000;
+      /* Black text color */
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
 
-/* Hamburger to X transformation */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 6px);
-}
+    .drawer-menu ul li a:hover {
+      color: #007bff;
+      /* Blue hover color */
+    }
 
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
+    /* Hamburger to X transformation */
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
 
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -6px);
-}
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
 
-@media (max-width: 768px) {
-  .card, .portfolio-item, .testimonial, .blog-card {
-    width: 100%;
-  }
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
 
-  nav ul {
-    display: none;
-  }
+    @media (max-width: 768px) {
 
-  .menu-toggle {
-    display: flex;
-  }
-}
+      .card,
+      .portfolio-item,
+      .testimonial,
+      .blog-card {
+        width: 100%;
+      }
 
+      nav ul {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -400,15 +441,19 @@
 
   <main>
     <section id="home" class="hero">
-	  <div class="notation-name">Notation<span class="notation-underscore">_</span></div>
+      <div class="notation-name">Notation<span class="notation-underscore">_</span></div>
       <p>AI-powered web and mobile solutions for the next generation.</p>
-	  <p>Build faster, smarter, better.</p>
-      <button class="contact-button get-in-touch" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Get In Touch</button>
+      <p>Build faster, smarter, better.</p>
+      <button class="contact-button get-in-touch"
+        onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Get In Touch</button>
     </section>
 
     <section id="about" class="hero">
       <h2>About Us</h2>
-      <p>We're a forward-thinking innovation lab dedicated to revolutionizing digital experiences. Our team leverages cutting-edge AI technologies to create transformative solutions that drive business growth. With a passion for excellence and a commitment to pushing boundaries, we deliver breakthrough products that redefine what's possible in the digital landscape.</p>
+      <p>We're a forward-thinking innovation lab dedicated to revolutionizing digital experiences. Our team leverages
+        cutting-edge AI technologies to create transformative solutions that drive business growth. With a passion for
+        excellence and a commitment to pushing boundaries, we deliver breakthrough products that redefine what's
+        possible in the digital landscape.</p>
     </section>
 
     <section id="services" class="hero">
@@ -426,7 +471,7 @@
           <h3>Consulting</h3>
           <p>We help you make data-driven, future-proof tech decisions.</p>
         </div>
-		<div class="card">
+        <div class="card">
           <h3>UI/UX Designing</h3>
           <p>We help you make data-driven, future-proof tech decisions.</p>
         </div>
@@ -436,10 +481,18 @@
     <section id="portfolio" class="hero">
       <h2>Our Portfolio</h2>
       <div class="portfolio-images">
-        <div class="portfolio-item"><h3>Project Alpha</h3></div>
-        <div class="portfolio-item"><h3>SmartPay App</h3></div>
-        <div class="portfolio-item"><h3>VisionML Platform</h3></div>
-		<div class="portfolio-item"><h3>SplitWise</h3></div>
+        <div class="portfolio-item">
+          <h3>Project Alpha</h3>
+        </div>
+        <div class="portfolio-item">
+          <h3>SmartPay App</h3>
+        </div>
+        <div class="portfolio-item">
+          <h3>VisionML Platform</h3>
+        </div>
+        <div class="portfolio-item">
+          <h3>SplitWise</h3>
+        </div>
       </div>
     </section>
 
@@ -454,7 +507,7 @@
           "Their React Native apps are lightning fast. Very happy with the result!"
           <span>— Rohit M., Startup Founder</span>
         </div>
-		<div class="testimonial">
+        <div class="testimonial">
           "Notation Labs transformed our outdated systems into AI-powered platforms. Amazing team!"
           <span>— Priya S., CTO</span>
         </div>
@@ -476,7 +529,7 @@
           <h3>React Native Performance Tips</h3>
           <p>Boost your app's performance with these smart tips from our devs.</p>
         </div>
-		<div class="blog-card">
+        <div class="blog-card">
           <h3>AI in Web Development</h3>
           <p>Learn how we leverage AI to automate and improve user experience.</p>
         </div>
@@ -487,11 +540,16 @@
       </div>
     </section>
 
+
+
+
+
+
     <section id="update" class="newsletter">
       <h2>Stay Updated</h2>
       <p>Subscribe to our newsletter for AI trends, product updates, and more.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="Your email address"/>
+        <input type="email" placeholder="Your email address" />
         <button>Subscribe</button>
       </div>
     </section>
@@ -516,7 +574,8 @@
   <footer>
     <div>
       <p>© 2025 Notation Labs</p>
-      <a href="https://madewithloveinindia.org" target="_blank">Made with <span aria-label="Love" style="color: #f43f5e">&hearts;</span> in India</a>
+      <a href="https://madewithloveinindia.org" target="_blank">Made with <span aria-label="Love"
+          style="color: #f43f5e">&hearts;</span> in India</a>
       <div class="social-links">
         <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
