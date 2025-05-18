@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notation_ Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #eee;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      top: 0; /* Remove space above nav */
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: 'Space Mono', monospace;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+    }
+
+    nav a:hover {
+      color: #333;
+    }
+
+    main {
+      margin-top: 60px; /* Reduced top margin */
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      min-height: calc(100vh * (9/16)); /* 16:9 aspect ratio */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Alternating section colors */
+    section:nth-child(odd) {
+      background-color: #eee;
+    }
+
+    section:nth-child(even) {
+      background-color: #fff;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #eee;
+    }
+    
+    .hero p {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 700px;
+      font-weight: 300;
+      margin-inline: auto;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .contact-button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-button:hover {
+      background-color: #222;
+    }
+
+    .get-in-touch {
+      max-width: 180px; /* Reduced width */
+      margin: 30px auto 0;
+    }
+
+    .notation-name {
+      font-size: 48px;
+      font-family: 'Space Mono', monospace;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .notation-underscore {
+      animation: blink 1s infinite;
+    }
+
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .card-container, .portfolio-images, .blog-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card, .portfolio-item, .blog-card, .testimonial {
+      background: #ddd;
+      border-radius: 8px;
+      padding: 30px;
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover, .portfolio-item:hover, .blog-card:hover, .testimonial:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3, .portfolio-item h3, .blog-card h3 {
+      font-family: 'Space Mono', monospace;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial {
+      font-style: italic;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+	
+    .newsletter {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #eee;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .newsletter-form input {
+      padding: 12px;
+      width: 400px;
+      border-radius: 4px;
+      border: 1px solid #000;
+      background-color: #fff;
+    }
+
+    .newsletter-form button {
+      padding: 12px 24px;
+      background: #000;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #eee;
+      color: #333;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    footer a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    footer a:hover {
+      color: #000;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      color: #333;
+      font-size: 20px;
+    }
+
+    .social-links a:hover {
+      color: #000;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .card, .portfolio-item, .testimonial, .blog-card {
+        width: 100%;
+      }
+      
+      nav ul {
+        gap: 15px;
+      }
+      
+      .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+	/* Hamburger menu styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Styles for menu drawer */
+.drawer-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100vh;
+  background-color: #fff; /* Changed to white for black text */
+  color: #000; /* Text color */
+  z-index: 1000;
+  padding-top: 70px;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.drawer-menu.open {
+  right: 0;
+}
+
+.drawer-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.drawer-menu ul li {
+  margin: 15px 0;
+}
+
+.drawer-menu ul li a {
+  color: #000; /* Black text color */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.drawer-menu ul li a:hover {
+  color: #007bff; /* Blue hover color */
+}
+
+/* Hamburger to X transformation */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .card, .portfolio-item, .testimonial, .blog-card {
+    width: 100%;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Notation_ Labs</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#update">Newsletter</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="drawer-menu" id="drawer-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#update">Newsletter</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+	  <div class="notation-name">Notation<span class="notation-underscore">_</span></div>
+      <p>AI-powered web and mobile solutions for the next generation.</p>
+	  <p>Build faster, smarter, better.</p>
+      <button class="contact-button get-in-touch" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Get In Touch</button>
+    </section>
+
+    <section id="about" class="hero">
+      <h2>About Us</h2>
+      <p>We're a forward-thinking innovation lab dedicated to revolutionizing digital experiences. Our team leverages cutting-edge AI technologies to create transformative solutions that drive business growth. With a passion for excellence and a commitment to pushing boundaries, we deliver breakthrough products that redefine what's possible in the digital landscape.</p>
+    </section>
+
+    <section id="services" class="hero">
+      <h2>Our Services</h2>
+      <div class="card-container">
+        <div class="card">
+          <h3>AI Web Development</h3>
+          <p>Crafting smart, scalable web apps using the latest AI tools.</p>
+        </div>
+        <div class="card">
+          <h3>Mobile Solutions</h3>
+          <p>Cross-platform apps built with React Native & intelligent APIs.</p>
+        </div>
+        <div class="card">
+          <h3>Consulting</h3>
+          <p>We help you make data-driven, future-proof tech decisions.</p>
+        </div>
+		<div class="card">
+          <h3>UI/UX Designing</h3>
+          <p>We help you make data-driven, future-proof tech decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="hero">
+      <h2>Our Portfolio</h2>
+      <div class="portfolio-images">
+        <div class="portfolio-item"><h3>Project Alpha</h3></div>
+        <div class="portfolio-item"><h3>SmartPay App</h3></div>
+        <div class="portfolio-item"><h3>VisionML Platform</h3></div>
+		<div class="portfolio-item"><h3>SplitWise</h3></div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="hero">
+      <h2>What Clients Say</h2>
+      <div class="card-container">
+        <div class="testimonial">
+          "Notation Labs transformed our outdated systems into AI-powered platforms. Amazing team!"
+          <span>— Priya S., CTO</span>
+        </div>
+        <div class="testimonial">
+          "Their React Native apps are lightning fast. Very happy with the result!"
+          <span>— Rohit M., Startup Founder</span>
+        </div>
+		<div class="testimonial">
+          "Notation Labs transformed our outdated systems into AI-powered platforms. Amazing team!"
+          <span>— Priya S., CTO</span>
+        </div>
+        <div class="testimonial">
+          "Their React Native apps are lightning fast. Very happy with the result!"
+          <span>— Rohit M., Startup Founder</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="hero">
+      <h2>From the Lab</h2>
+      <div class="blog-items">
+        <div class="blog-card">
+          <h3>AI in Web Development</h3>
+          <p>Learn how we leverage AI to automate and improve user experience.</p>
+        </div>
+        <div class="blog-card">
+          <h3>React Native Performance Tips</h3>
+          <p>Boost your app's performance with these smart tips from our devs.</p>
+        </div>
+		<div class="blog-card">
+          <h3>AI in Web Development</h3>
+          <p>Learn how we leverage AI to automate and improve user experience.</p>
+        </div>
+        <div class="blog-card">
+          <h3>React Native Performance Tips</h3>
+          <p>Boost your app's performance with these smart tips from our devs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="update" class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to our newsletter for AI trends, product updates, and more.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email address"/>
+        <button>Subscribe</button>
+      </div>
+    </section>
+
+    <section id="contact" class="hero">
+      <h2>Contact Us</h2>
+      <p>Got a project or question? Let's talk!</p>
+      <div class="contact-buttons">
+        <a href="mailto:info@notationlabs.com" class="contact-button">
+          <i class="fas fa-envelope"></i> Email Us
+        </a>
+        <a href="tel:+919112973594" class="contact-button">
+          <i class="fas fa-phone"></i> Call Us
+        </a>
+        <a href="https://wa.me/919112973594" class="contact-button">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2025 Notation Labs</p>
+      <a href="https://madewithloveinindia.org" target="_blank">Made with <span aria-label="Love" style="color: #f43f5e">&hearts;</span> in India</a>
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div>
+      <p>Contact:</p>
+      <a href="mailto:info@notationlabs.com">info@notationlabs.com</a>
+      <a href="tel:+919112973594">+91 91129 73594</a>
+    </div>
+  </footer>
+
+</body>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const drawerMenu = document.getElementById('drawer-menu');
+  const overlay = document.getElementById('menu-overlay');
+
+  menuToggle.addEventListener('click', function () {
+    this.classList.toggle('active');
+    drawerMenu.classList.toggle('open');
+    overlay.style.display = drawerMenu.classList.contains('open') ? 'block' : 'none';
+  });
+
+  const menuLinks = drawerMenu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      menuToggle.classList.remove('active');
+      drawerMenu.classList.remove('open');
+      overlay.style.display = 'none';
+    });
+  });
+
+  overlay.addEventListener('click', function () {
+    menuToggle.classList.remove('active');
+    drawerMenu.classList.remove('open');
+    overlay.style.display = 'none';
+  });
+</script>
+
+</html>
