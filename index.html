@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
   <title>Notation_ Labs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -549,8 +550,8 @@
       <h2>Stay Updated</h2>
       <p>Subscribe to our newsletter for AI trends, product updates, and more.</p>
       <div class="newsletter-form">
-        <input type="email" placeholder="Your email address" />
-        <button>Subscribe</button>
+        <input type="email" id="emailInput" placeholder="Your email address" required />
+        <button onclick="submitEmail()">Subscribe</button>
       </div>
     </section>
 
@@ -617,6 +618,38 @@
     drawerMenu.classList.remove('open');
     overlay.style.display = 'none';
   });
+
+
+  function submitEmail() {
+    const email = document.getElementById("emailInput").value.trim();
+    if (!email) {
+      alert("Please enter an email address.");
+      return;
+    }
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzBKBF7X8sxylOgd5zMmBa6-O8u_75qDlt9kKcqiTX6yUg1dGFr5_X8kayErAglSxzw/exec"; // <-- paste the URL you got from Step 3
+
+    fetch(scriptURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: `email=${encodeURIComponent(email)}`
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.result === "success") {
+          alert("Thank you for subscribing!");
+          document.getElementById("emailInput").value = "";
+        } else {
+          alert("Submission failed.");
+        }
+      })
+      .catch(error => {
+        console.error("Error!", error.message);
+        alert("Thank you for subscribing!");
+      });
+  }
 </script>
 
 </html>
